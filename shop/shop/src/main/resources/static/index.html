@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+ 
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit" id="loginButton">Login</button>
+            <button type="submit" id="registerButton">Register</button>
+        </form>
+    </div>
+    
+    
+    <script>
+ // Normal selectors
+    document.getElementById('loginButton').addEventListener('click', (event)=> {
+        event.preventDefault();
+        alert('Login button clicked!');
+    });
+
+    document.getElementById('username').addEventListener('keypress', (event)=>{
+        console.log('Key pressed in username field: ' + event.key);
+    });
+
+    document.addEventListener('mousemove', (event) =>{
+        console.log('Mouse moved at: X=' + event.clientX + ', Y=' + event.clientY);
+    });
+
+    document.getElementById('registerButton').addEventListener('click', (event)=>{
+    	document.getElementById('registerButton').setAttribute("disabled", true);
+    });
+    // jQuery selectors
+//$(document).ready(function() {
+//    $('#loginButton').click(function(event) {
+//        event.preventDefault();
+//        alert('Login button clicked using jQuery!');
+//    });
+//
+//    $('#username').keypress(function(event) {
+//        console.log('Key pressed in username field using jQuery: ' + event.key);
+//    });
+//
+//    $(document).mousemove(function(event) {
+//        console.log('Mouse moved using jQuery at: X=' + event.clientX + ', Y=' + event.clientY);
+//    });
+//});
+//
+    </script>
+    <script>
+        function testOperators() {
+            // Arithmetic Operators
+
+            let name = "Prathak";
+            console.log("Hello, " + name + " Welcome");
+            name = "Prathak";
+            console.log(`Hello, ${name} Welcome`);
+            let text = "This is line1. \n" + "This is line2.";
+            console.log(text);
+            text = `This is line1.
+			This is line2.`;
+            console.log(text);
+            let product = "Laptop";
+            let price = 55000;
+            console.log(`The price of ${product} is ${price}`);
+
+            let a = 10;
+            let b = 20;
+            let c = "20";
+            console.log('Arithmetic Operators:');
+            console.log('a + b =', a + b);
+            console.log('a - b =', a - b);
+            console.log('a * b =', a * b);
+            console.log('a / b =', a / b);
+            console.log('a % b =', a % b);
+            console.log('a++ =', a++);
+            console.log('++a =', ++a);
+            console.log('a-- =', a--);
+            console.log('--a =', --a);
+ 
+            
+            // Relational Operators
+            console.log('\nRelational Operators:');
+            console.log('a == b:', a == b);
+            console.log('b===c: ', b===c);
+            console.log('a != b:', a != b);
+            console.log('a > b:', a > b);
+            console.log('a < b:', a < b);
+            console.log('a >= b:', a >= b);
+            console.log('a <= b:', a <= b);
+ 
+            // Logical Operators
+            let x = true;
+            let y = false;
+            console.log('\nLogical Operators:');
+            console.log('x && y:', x && y);
+            console.log('x || y:', x || y);
+            console.log('!x:', !x);
+
+            let arr = [1, 6, 3, 4, 5];
+            arr.push(6); // Add element to the end
+            arr.unshift(0); // Add element to the beginning
+            let removedElement = arr.pop(); // Remove last element
+            let firstElement = arr.shift(); // Remove first element
+            let slicedArr = arr.slice(1, 3); // Slice array from index 1 to 3
+            let joinedArr = arr.join('-'); // Join array elements with '-'
+            let reversedArr = arr.reverse(); // Reverse the array
+            let mappedArr = arr.map(num => num * 2); // Map each element to its double
+            let sortedArr = arr.sort();
+            console.log('\nArray Operations:');
+            console.log('Original Array: [1, 6, 3, 4, 5]');
+            console.log('After push(6):', arr);
+            console.log('After unshift(0):', arr);
+            console.log('Removed Last Element (pop):', removedElement);
+            console.log('Removed First Element (shift):', firstElement);
+            console.log('Final Array:', arr);
+            console.log('Sliced Array (index 1 to 3):', slicedArr);
+            console.log('Joined Array (with "-"):', joinedArr);
+            console.log('Reversed Array:', reversedArr);
+            console.log('Mapped Array (elements doubled):', mappedArr);
+            console.log('Sorted Array (ascending):', sortedArr);
+            console.log('\nforEach Method:');
+            arr.forEach((element, index) => {
+                console.log(`Element at index ${index}: ${element}`);
+            });
+            let str = "Welcome to, Genpact!";
+            let upperStr = str.toUpperCase(); // Convert to uppercase
+            let lowerStr = str.toLowerCase(); // Convert to lowercase
+            let subStr = str.slice(0, 5); // Extract substring
+            let replacedStr = str.replace("Genpact", "World"); // Replace substring
+            let includesStr = str.includes("Genpact"); // Check if substring exists
+            let splitStr = str.split(", "); // Split string into array
+            console.log('\nString Methods:');
+            console.log('Original String:', str);
+            console.log('Uppercase:', upperStr);
+            console.log('Lowercase:', lowerStr);
+            console.log('Slice:', subStr);
+            console.log('Replaced String:', replacedStr);
+            console.log('Includes "Genpact":', includesStr);
+            console.log('Split String:', splitStr);
+
+            let person = {
+            	      name: "Prathak",
+            	      age: 23,
+            	      city: "Noida",
+            	      hasvotercard: true
+            	    };
+            	    delete person.hasvotercard;
+            	    console.log(person); 
+            	    let user = {
+            	      name3: "Gaurav",
+            	      greet() {
+            	    console.log(`Hello, my name is ${this.name3}`);
+            	      }
+            	    };
+            	    user.greet();
+            	    let person1 = {
+            	            name4: "Rohan",
+            	            age4: 24,
+            	            city4: "HD"
+            	        };
+            	    let { name4, age4, city4 } = person1;
+            	    console.log(name4); 
+            	    console.log(age4);  
+            	    console.log(city4); 
+            	    let obj1 = { a: 10, b: 15 };
+            	    let obj2 = { ...obj1, c: 20 };
+            	    console.log(obj2); 
+            	    let userInfo = { name2: "Prathak", age2: 22 };
+            	    let userLocation = { city2: "Noida", country2: "India" };
+            	    let userAllData = { ...userInfo, ...userLocation };
+            	    console.log(userAllData);
+            	    if (userAllData.age > 25) {
+                        console.log("Employee is older than 25");
+                    }
+            	    	else {
+            	            console.log("Employee is not older than 25");
+            	        }
+            	    // Basic for loop
+                    for (let i = 0; i < 5; i++) {
+                        console.log(`For loop iteration: ${i}`);
+                    }
+ 
+                    // Basic for-in loop
+                    for (let key in person1) {
+                        console.log(`Key: ${key}, Value: ${person1[key]}`);
+                    }
+ 
+                    // Basic for-of loop
+                    let skills = ["JavaScript", "HTML", "CSS"];
+                    for (let skill of skills) {
+                        console.log(`Skill: ${skill}`);
+                    }
+ 
+                    // Basic while loop
+                    let count = 0;
+                    while (count < 3) {
+                        console.log(`While loop count: ${count}`);
+                        count++;
+                    }
+ 
+                    // Basic do-while loop
+                    let num = 0;
+                    do {
+                        console.log(`Do-while loop number: ${num}`);
+                        num++;
+                    } while (num < 3);
+                    const add = function(a,b){
+                		return a+b;
+                		}
+                console.log(add(4,5));
+                const multiply = (x,y) => x*y;
+                console.log(multiply(12,23));
+                const cube =x =>x*x*x;
+                console.log(cube(5));
+                const greet = (name) => {
+                    let message = `Hello, ${name}, Welcome`;
+                    return message;
+                };
+ 
+                console.log(greet("Prathak"));
+
+        function operate (num1,num2 , operation){
+        	return operation(num1,num2);
+        }
+        const multiply1 =(x,y)=>x*y;
+        const add1=(x,y) =>x+y;
+        console.log(operate(12,15,add1));
+        console.log(operate(12,15,multiply1));
+        function greeting(message) {
+            return function(name) {
+                console.log(`${message}, ${name}`);
+            };
+        }
+        const msg = greeting("Hello");
+        msg("Hello Prathak");
+        }
+ 
+        testOperators();
+        
+// ------------------------------ Define the array of hotel rooms -------------------
+
+        const hotelRooms = [
+
+            { type: "standard", price: 100, available: true },
+
+            { type: "deluxe", price: 200, available: false },
+
+            { type: "suite", price: 300, available: true },
+
+            { type: "standard", price: 120, available: false },
+
+            { type: "suite", price: 250, available: true }
+
+        ];
+         
+  //--------------- Define the function to find available rooms within a price range -----------
+
+        const findAvailableRooms = (minPrice, maxPrice) => {
+
+            return hotelRooms.filter(room => room.price >= minPrice && room.price <= maxPrice && room.available);
+
+        };
+         
+ // Example usage of the function
+
+        const availableRooms = findAvailableRooms(100, 250);
+
+        console.log(availableRooms);
+        
+// --------------------- Generate Reciept -------------------------
+        const cartItems = [
+            { name: "Chips", price: 100, quantity: 3 },
+            { name: "Kurkure", price: 50, quantity: 6 },
+            { name: "Oreo", price: 80, quantity: 2 }
+        ];
+        
+        const generateReceipt = (cartItems) => {
+            let totalAmount = 0;
+     
+            for (let i = 0; i < cartItems.length; i++) {
+                totalAmount += cartItems[i].price * cartItems[i].quantity;
+            }
+     
+            return totalAmount;
+        };
+     
+        const total = generateReceipt(cartItems);
+        console.log(`Total Amount: ₹${total}`);
+// ----------------------------- Students Maeks -------------------------
+        const studentData = {
+        	    name: "Prathak",
+        	    marks: {
+        	        maths: 85,
+        	        science: 90,
+        	        computers: 95
+        	    }
+        	};
+     
+        	const generateReportCard = (studentData) => {
+        	    const {marks} = studentData;
+        	    const totalMarks = marks.maths + marks.science + marks.computers;
+        	    const subjectsCount = Object.keys(marks).length;
+        	    const averageMarks = totalMarks / subjectsCount;
+        	    const percentage = (totalMarks / (subjectsCount * 100)) * 100;
+     
+        	    return {
+        	        totalMarks,
+        	        averageMarks,
+        	        percentage
+        	    };
+        	};
+     
+        	const reportCard = generateReportCard(studentData);
+        	console.log(`Total Marks: ${reportCard.totalMarks}`);
+        	console.log(`Average Marks: ${reportCard.averageMarks}`);
+        	console.log(`Percentage: ${reportCard.percentage}%`);
+
+        	// -----------------------------------------------------
+        	function fetchData(callback){
+    		console.log("Fetched data............");
+    		setTimeout(()=>{
+    			let data={name:"Tanuj", age:25};
+    			callback(data);
+    		},3000);
+    	}
+    	function processData(data){
+    		console.log("Processing data....",data);
+    	}
+    	fetchData(processData);
+         
+    	// ---------------------- Promise -------------------------------
+function fetchDataPromise() {
+    console.log("Fetching data...");
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            let success = true;
+            if (success) {
+                resolve({ name: "Prathak", age: 23 }); // promise fulfilled
+            } else {
+                reject("Error: Failed to fetch data");
+            }
+        }, 1000);
+    });
+}
+ 
+fetchDataPromise()
+    .then((data) => {
+        console.log("Processing data...", data);
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+    
+    // ------------------- Promise Chaining -------------
+function fetchData() {
+    return new Promise((resolve, reject) => {
+        console.log("Fetching data...");
+        setTimeout(() => {
+            let success = true;
+            if (success) {
+                resolve({ name: "Prathak", age: 23 }); // Fulfills the promise
+            } else {
+                reject("Error: Failed to fetch data."); // Rejects the promise
+            }
+        }, 3000);
+    });
+}
+
+    fetchData()
+ 
+	.then(data => {
+ 
+	    console.log("Processing data------",data);
+ 
+	    return {...data, city:"Noida"};
+ 
+	})
+ 
+	.then((updatedData) => {
+ 
+		 console.log("Processing updated data------",updatedData);
+ 
+	})
+ 
+	.catch(error => {
+ 
+	   console.error(error);
+ 
+	});
+    
+    // --------------- await ------------------
+    
+    async function getData(){
+
+    	console.log("Fetching Data  . . .");
+
+    	try{
+    		let data = await fetchData();
+    		console.log("Processing Data: ", data);
+   			let data2 = {...data, city:"Noida"};
+   			console.log("Processing updated data------",data2);
+    	}
+
+    	catch(error){
+
+    		console.log("Error: ", error);
+
+    	}
+
+    }
+     
+    getData();
+
+    // ---------------------- Fetch from API ----------------------
+    function fetchUserDataAPI()
+    {
+    	//make the get request
+    	fetch("https://jsonplaceholder.typicode.com/users").then((response)=>{
+    		if(!response.ok)
+    			{
+    			throw new Error("HTTP ERROR: status: ",response.status);
+    			}
+    		return response.json();
+    	}).then((data)=>{
+    		console.log("user data: ",data);
+    	}).catch((error)=>{console.log("Error:",error)});
+    }
+    fetchUserDataAPI();
+   
+    async function asyncFetchUserData() {
+        try {
+            const response = await fetch("https://jsonplaceholder.typicode.com/users");
+            if (!response.ok) {
+                throw new Error(`Http error : status : ${response.status}`);
+            }
+            const data = await response.json();
+            console.log("Testing fetch api: Users data: ", data);
+        } catch (error) {
+            console.log("Testing fetch api: Error: ", error);
+        }}
+    asyncFetchUserData();
+    
+    //------------------------ parametrized -----------------------
+        async function asyncFetchUserData2(id) {
+        try {
+            const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
+            if (!response.ok) {
+                throw new Error(`Http error : status : ${response.status}`);
+            }
+            const data = await response.json();
+            console.log("Testing fetch api: Users data: ", data);
+        } catch (error) {
+            console.log("Testing fetch api: Error: ", error);
+        }}
+    asyncFetchUserData2(5);
+    // ----------------------------- Promise all --------------------
+    
+    async function fetchMultipleUsers(userIds) {
+    try {
+        const userPromises = userIds.map(id => asyncFetchUserData2(id));
+        const usersData = await Promise.all(userPromises);
+        console.log("Testing fetch API: Users data:", usersData);
+
+    } catch (error) {
+        console.log("Error fetching multiple users:", error);
+    }
+}
+    const userIds = [1, 2, 3, 4, 50];
+    fetchMultipleUsers(userIds);
+    // -------------------- POST method -------------------
+    // Function to set user name and email
+async function setUserDetails(id, name, email) {
+    try {
+        const response = await fetch(`https://jsonplaceholder.typicode.com/users/`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ name, email })
+        });
+
+        if (!response.ok) {
+            throw new Error(`Http error: status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log("User details set successfully:", data);
+    } catch (error) {
+        console.log("Error setting user details:", error);
+    }
+}
+
+// Example usage
+setUserDetails(1, 'John Doe', 'john.doe@example.com');
+asyncFetchUserData();
+
+// ------------- Delete User ------------------------------
+function deleteUser(userId) {
+    // Step 1: Confirmation from user/client
+    const confirmation = window.confirm(`Are you sure you want to delete the user with ID: ${userId}?`);
+    if (!confirmation) {
+        // If user cancels the deletion
+        console.log('Deletion cancelled.');
+        return; // Exit the function
+    }
+ 
+    // Step 2: Proceed with deletion
+    fetch(`https://jsonplaceholder.typicode.com/users/${userId}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log(`User with ID: ${userId} deleted.`);
+        } else {
+            console.error('Error deleting user:', response.statusText);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+
+async function updateUser(userId, userData) {
+    try {
+        const response = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(userData),
+        });
+
+        if (!response.ok) {
+            throw new Error('Error updating user: ' + response.statusText);
+        }
+
+        const data = await response.json();
+        console.log(`User with ID: ${userId} updated.`, data);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+const updatedUserDataPut = {
+    name: "Prathak",
+    email: "prthk@gmail.com",
+    address: {
+        street: "Noida",
+        city: "Sector 18",
+        zipcode: "12345"
+    },
+    phone: "1234567890",
+    website: "prathak.com"
+};
+
+updateUser(1, updatedUserDataPut);
+async function updateUserSpecific(userId, specificFields) {
+    try {
+        const response = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(specificFields),
+        });
+
+        if (!response.ok) {
+            throw new Error('Error updating user: ' + response.statusText);
+        }
+
+        const data = await response.json();
+        console.log(`User with ID: ${userId} updated with specific fields.`, data);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+const specificFieldsToUpdatePatch = {
+    email: "gupta.prathak@example.com",
+    phone: "9876543210"
+};
+
+updateUserSpecific(1, specificFieldsToUpdate);
+	</script>
+</body>
+</html>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input {
+    width: 93%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+</style>
